@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package associatedtokenaccount
+package associatedtoken2022account
 
 import (
 	"errors"
@@ -73,7 +73,7 @@ func (inst *CreateIdempotent) SetMint(mint solana.PublicKey) *CreateIdempotent {
 func (inst CreateIdempotent) Build() *Instruction {
 
 	// Find the associatedTokenAddress;
-	associatedTokenAddress, _, _ := solana.FindAssociatedTokenAddress(
+	associatedTokenAddress, _, _ := solana.FindAssociatedToken2022Address(
 		inst.Wallet,
 		inst.Mint,
 	)
@@ -105,7 +105,7 @@ func (inst CreateIdempotent) Build() *Instruction {
 			IsWritable: false,
 		},
 		{
-			PublicKey:  solana.TokenProgramID,
+			PublicKey:  solana.Token2022ProgramID,
 			IsSigner:   false,
 			IsWritable: false,
 		},
@@ -139,12 +139,12 @@ func (inst *CreateIdempotent) Validate() error {
 	if inst.Mint.IsZero() {
 		return errors.New("Mint not set")
 	}
-	_, _, err := solana.FindAssociatedTokenAddress(
+	_, _, err := solana.FindAssociatedToken2022Address(
 		inst.Wallet,
 		inst.Mint,
 	)
 	if err != nil {
-		return fmt.Errorf("error while FindAssociatedTokenAddress: %w", err)
+		return fmt.Errorf("error while FindAssociatedToken2022Address: %w", err)
 	}
 	return nil
 }

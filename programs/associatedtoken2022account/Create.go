@@ -147,12 +147,12 @@ func (inst *Create) Validate() error {
 	if inst.Mint.IsZero() {
 		return errors.New("Mint not set")
 	}
-	_, _, err := solana.FindAssociatedTokenAddress(
+	_, _, err := solana.FindAssociatedToken2022Address(
 		inst.Wallet,
 		inst.Mint,
 	)
 	if err != nil {
-		return fmt.Errorf("error while FindAssociatedTokenAddress: %w", err)
+		return fmt.Errorf("error while FindAssociatedToken2022Address: %w", err)
 	}
 	return nil
 }
