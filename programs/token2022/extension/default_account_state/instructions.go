@@ -6,7 +6,7 @@ package default_account_state
 import (
 	"errors"
 	common "github.com/gagliardetto/solana-go/programs/common"
-	spltoken2022 "github.com/gagliardetto/solana-go/programs/spl_token_2022"
+	token2022 "github.com/gagliardetto/solana-go/programs/token2022"
 	binary "github.com/gagliardetto/binary"
 	format "github.com/gagliardetto/solana-go/text/format"
 	treeout "github.com/gagliardetto/treeout"
@@ -14,7 +14,7 @@ import (
 
 // Initialize Instruction
 type Initialize struct {
-	State *spltoken2022.AccountState
+	State *token2022.AccountState
 	// [0] = [WRITE] mint `The mint to initialize.`
 	common.AccountMetaSlice `bin:"-"`
 	_programId              *common.PublicKey
@@ -34,7 +34,7 @@ func NewInitializeInstructionBuilder() *Initialize {
 //	state:
 //	mint: The mint to initialize.
 func NewInitializeInstruction(
-	state spltoken2022.AccountState,
+	state token2022.AccountState,
 	mint common.PublicKey,
 ) *Initialize {
 	return NewInitializeInstructionBuilder().
@@ -43,7 +43,7 @@ func NewInitializeInstruction(
 }
 
 // SetState sets the "state" parameter.
-func (obj *Initialize) SetState(state spltoken2022.AccountState) *Initialize {
+func (obj *Initialize) SetState(state token2022.AccountState) *Initialize {
 	obj.State = &state
 	return obj
 }
@@ -138,7 +138,7 @@ func (obj *Initialize) EncodeToTree(parent treeout.Branches) {
 
 // Update Instruction
 type Update struct {
-	State *spltoken2022.AccountState
+	State *token2022.AccountState
 	// [0] = [WRITE] mint `The mint.`
 	// [1] = [SIGNER] mintAuthority `The mint freeze authority.`
 	common.AccountMetaSlice `bin:"-"`
@@ -160,7 +160,7 @@ func NewUpdateInstructionBuilder() *Update {
 //	mint: The mint.
 //	mintAuthority: The mint freeze authority.
 func NewUpdateInstruction(
-	state spltoken2022.AccountState,
+	state token2022.AccountState,
 	mint common.PublicKey,
 	mintAuthority common.PublicKey,
 ) *Update {
@@ -171,7 +171,7 @@ func NewUpdateInstruction(
 }
 
 // SetState sets the "state" parameter.
-func (obj *Update) SetState(state spltoken2022.AccountState) *Update {
+func (obj *Update) SetState(state token2022.AccountState) *Update {
 	obj.State = &state
 	return obj
 }

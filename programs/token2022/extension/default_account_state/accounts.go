@@ -4,14 +4,14 @@
 package default_account_state
 
 import (
-	spltoken2022 "github.com/gagliardetto/solana-go/programs/spl_token_2022"
 	binary "github.com/gagliardetto/binary"
+	token2022 "github.com/gagliardetto/solana-go/programs/token2022"
 )
 
 // DefaultAccountState Struct
 type DefaultAccountState struct {
 	// Default Account::state in which new Accounts should be initialized
-	State spltoken2022.AccountState
+	State token2022.AccountState
 }
 
 const DEFAULT_ACCOUNT_STATE_SIZE = 1
