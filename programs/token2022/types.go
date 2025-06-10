@@ -48,3 +48,88 @@ const (
 	// the delegate are able to perform operations on this account.
 	Frozen
 )
+
+// ExtensionType Enum
+type ExtensionType ag_binary.BorshEnum
+
+const (
+	ExtensionTypeUninitialized ExtensionType = iota
+	ExtensionTypeTransferFeeConfig
+	ExtensionTypeTransferFeeAmount
+	ExtensionTypeMintCloseAuthority
+	ExtensionTypeConfidentialTransferMint
+	ExtensionTypeConfidentialTransferAccount
+	ExtensionTypeDefaultAccountState
+	ExtensionTypeImmutableOwner
+	ExtensionTypeMemoTransfer
+	ExtensionTypeNonTransferable
+	ExtensionTypeInterestBearingConfig
+	ExtensionTypeCpiGuard
+	ExtensionTypePermanentDelegate
+	ExtensionTypeNonTransferableAccount
+	ExtensionTypeTransferHook
+	ExtensionTypeTransferHookAccount
+	ExtensionTypeConfidentialTransferFeeConfig
+	ExtensionTypeConfidentialTransferFeeAmount
+	ExtensionTypeMetadataPointer
+	ExtensionTypeTokenMetadata
+	ExtensionTypeGroupPointer
+	ExtensionTypeTokenGroup
+	ExtensionTypeGroupMemberPointer
+	ExtensionTypeTokenGroupMember
+)
+
+func (value ExtensionType) String() string {
+	switch value {
+	case ExtensionTypeUninitialized:
+		return "Uninitialized"
+	case ExtensionTypeTransferFeeConfig:
+		return "TransferFeeConfig"
+	case ExtensionTypeTransferFeeAmount:
+		return "TransferFeeAmount"
+	case ExtensionTypeMintCloseAuthority:
+		return "MintCloseAuthority"
+	case ExtensionTypeConfidentialTransferMint:
+		return "ConfidentialTransferMint"
+	case ExtensionTypeConfidentialTransferAccount:
+		return "ConfidentialTransferAccount"
+	case ExtensionTypeDefaultAccountState:
+		return "DefaultAccountState"
+	case ExtensionTypeImmutableOwner:
+		return "ImmutableOwner"
+	case ExtensionTypeMemoTransfer:
+		return "MemoTransfer"
+	case ExtensionTypeNonTransferable:
+		return "NonTransferable"
+	case ExtensionTypeInterestBearingConfig:
+		return "InterestBearingConfig"
+	case ExtensionTypeCpiGuard:
+		return "CpiGuard"
+	case ExtensionTypePermanentDelegate:
+		return "PermanentDelegate"
+	case ExtensionTypeNonTransferableAccount:
+		return "NonTransferableAccount"
+	case ExtensionTypeTransferHook:
+		return "TransferHook"
+	case ExtensionTypeTransferHookAccount:
+		return "TransferHookAccount"
+	case ExtensionTypeConfidentialTransferFeeConfig:
+		return "ConfidentialTransferFeeConfig"
+	case ExtensionTypeConfidentialTransferFeeAmount:
+		return "ConfidentialTransferFeeAmount"
+	case ExtensionTypeMetadataPointer:
+		return "MetadataPointer"
+	case ExtensionTypeTokenMetadata:
+		return "TokenMetadata"
+	case ExtensionTypeGroupPointer:
+		return "GroupPointer"
+	case ExtensionTypeTokenGroup:
+		return "TokenGroup"
+	case ExtensionTypeGroupMemberPointer:
+		return "GroupMemberPointer"
+	case ExtensionTypeTokenGroupMember:
+		return "TokenGroupMember"
+	default:
+		return ""
+	}
+}
